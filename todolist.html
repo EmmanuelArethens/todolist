@@ -32,6 +32,7 @@
                 p.textContent = todo.value + " " + comment.value ;
                 document.body.appendChild(p);
                 let button = document.createElement('button');
+                button.innerHTML = "Supr"
                 document.body.appendChild(button);
                 button.addEventListener("click", function(){
                 p.remove();
