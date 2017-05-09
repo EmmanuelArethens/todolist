@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>todolist</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <h1>ToDoList</h1>
+    <form method="POST" action="#" id="form">
+        <label for="todo">todo:</label>
+        <input id="todo" type="text">
+        <label for="comment">comment:</label>
+        <input id="comment" type="text">
+        <input type="submit" id="submit">
+        <p id=texte></p>
+    </form>
+
+        <script>
+            let form = document.querySelector('#form');
+            let todo = document.querySelector('#todo');
+            let comment = document.querySelector('#comment');
+            
+            form.addEventListener("submit", function(e){
+                console.log(todo.value, comment.value);
+                let p = document.createElement('p');
+                p.textContent = todo.value + " " + comment.value ;
+                document.body.appendChild(p);
+                let button = document.createElement('button');
+                document.body.appendChild(button);
+                button.addEventListener("click", function(){
+                p.remove();
+                button.remove();
+                });
+
+            e.preventDefault();
+            });
+            
+        </script>
+</body>
+
+</html>
